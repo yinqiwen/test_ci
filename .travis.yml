@@ -21,7 +21,10 @@ script:
 - GOOS=linux GOARCH=amd64 go build github.com/yinqiwen/test_ci
 - tar cjf test_ci-${TRAVIS_TAG}.tar.bz2 test_ci
 
-
+before_deploy:
+  - git config --local user.name "yinqiwen"
+  - git config --local user.email "yinqiwen@gmail.com"
+  - git tag -f -a "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   - provider: releases
     api_key:
@@ -33,14 +36,6 @@ deploy:
     on:
       tags: true
       repo: yinqiwen/gsnova
-  - provider: script
-    script: 
-    - if [ -n "$TRAVIS_TAG" ] ; then
-        git config --local user.name "yinqiwen";
-        git config --local user.email "yinqiwen@gmail.com";
-        git tag -f -a latest -m "latest version";
-        git push -f --tags; 
-      fi
   # - provider: heroku
   #   api_key:
   #     secure: "LQZx6US2jzCMT3VsZHBKT3w4vq3dA1iJZ0591pYkUtvtChIBWnYe9F7rn4XInkyCSKRLBBEkQvu7A9qED0KOi0DlsmIOUgZ5d+qMicWeU0OvUNeiQEBj2bX8oa5mYRW3hBznpkLCZBwnXJLrv6A6LpNQYQ1ZvR19rtmTmXAku+s="
