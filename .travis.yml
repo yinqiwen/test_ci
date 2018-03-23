@@ -25,6 +25,7 @@ before_deploy:
   - git config --local user.name "yinqiwen"
   - git config --local user.email "yinqiwen@gmail.com"
   - git tag -f -a "latest"
+  - echo "hello"
 deploy:
   - provider: releases
     api_key:
