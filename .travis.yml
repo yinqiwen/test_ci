@@ -24,7 +24,7 @@ script:
 before_deploy:
   - git config --local user.name "yinqiwen"
   - git config --local user.email "yinqiwen@gmail.com"
-  - git tag -f -a "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - git tag -f -a "latest"
 deploy:
   - provider: releases
     api_key:
