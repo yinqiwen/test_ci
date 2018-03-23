@@ -7,13 +7,6 @@ language: go
 go:
 - "1.10"
 
-env:
-  global:
-    - secure: "e7IjyptwfaNmHUYAwTZbLjup0FVD6wVOQIggLSOcqYyrbSYKepVJdbvOUfWqdZ3tUWtpHb5H/2a8RkizXHH3mBi4K5/9wlByTGmiKKA05dYbDod3KpiLbPnHK9UjRQydD6wpYJcK0/yguXmFDqYoRIFwmxeqNJ78OydIo7BOxGY=" 
-    - secure: "LEmUhd0lO5BPox3+IdBw/u45Z3TtY0arkef6v7q27qcEs3a2p+SuVVElHx4UcU8/AhN3D9jlskB0UZIgZRMfB3xaPCBVvjHh8UwQ13WqrR7524HuU8kin/4vLDdoIEvs2hQaj58slzmdyddKG2dkgCwkpK/J1DBfKHttbYE+ias=" 
-    - secure: "MO3eA15Jp2CkN0SiSI5Oo32wioCcVbaWwpxBCgQrkIyV85yakPzhoWlQWvh90QXEU9bBDKlQiTOXfo11G0as7byU8typa5UI7uLG1sGD9l2bBZbFuqorMrvHl5PeOzfjAQuUnn2KNP5RccuaCn+n65ZImhj8oTFrYGmb1VTdgg0=" 
-    - secure: "J+GWt852LoGcez5tyuKSZF85IjoV4T/sIXn+0TuVznh8VHhIpjw4wqBDBbvyjeNgree8QYtJ6CR4aVh6T2JnCw6rsFyMoHEjBaRriIYzPBHtKQhvVyceFFsE6Sgn08ldH/x0T4V53TEo+1fG/wTM32OqTCZwnWND1ZvjHFxWxvw="
-
 install:
 - go get -t github.com/yinqiwen/test_ci
 script:
@@ -24,7 +17,7 @@ script:
 deploy:
   - provider: releases
     api_key:
-      secure: YngDT2JlydCG+qb8Ww9wBFyWiLRQJczybNLeoFKluBXKoh1Vu+TZeReMK+rRUjOqOmYV8sNtOnEVSg4+ICeYDNp9fRRwcNKTkp0H+8pH0OynxdH2faCjx1H5U0WQuWqMLQoMSHZ90I0tL40kEJOChLY6WGvwY47YBqi/dsvmTfg=
+      secure: XrroDaqNpEyc0gijt2v4NsCxMSobIlwGPMFqIMgWxfvfQk/ycwvyqs2aGxQDwTIY6J9RmpNYWg5xWl3tCwCxdgnwRJqAHrhD//pfjLFU70jjnjlOXfs2W1LAzltMnC4Ll4pnXJAcAYuPtLZ72Q4IbLBGPLnicZQrL3b4zer0KytuRjivN0CbZF+1Wti/PazDyK7LUOimQhQWtC8be43rc/0VdLTmeo0aDRTQtDiZZgzcyjXYFoPR35pfghirEb9tMTOlgdb60lr2072sQPFv8dZv3XS+ipGWigo8+UfaP3TgPMLMFJQMbsT6JXPuATwXrMTVJgkvUAsR9wziy7FDr9XH6slI3HOTX+ZzAQ6G3dARF0jjhhVgtqx+ODj7TqGwPp36zyt0qry74mDbs1zFh3qG7SnDobCmINRGrWIP+O24Eojb4IXWetkymEHaw1/zHiS3Pm7SxPpuXuk9WkvNm3Q/F/ncyK1K1VKU/f0/5dLvJpXpDdjthEZL3UvkZKJfpn2+ERdtNsIZCqq60w/AtIcI/93q6vvoWJ4HbLo59JxLC3kA3aiqRP65MZZOzQ6rHeJoGBv6xJaZvLYO7swuU/EFtgH6UDdZrCX/lGvMKglwrY7YLCLYQ/RAlChNU/i1PR5cod983yi4gCckKHe6MxXiYrI8y+epFxUvRgTHYxE=
     file: 
       - "test_ci-${TRAVIS_TAG}.tar.bz2"
     skip_cleanup: true
